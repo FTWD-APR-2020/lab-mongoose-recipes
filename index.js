@@ -21,6 +21,14 @@ mongoose
   })
   .then(() => {
     // Run your code here, after you have insured that the connection was made
+    const myRecipe = new Recipe({
+      title: "Bandeja Paisa con suchi",
+      cuisine: "Colombian"
+    })
+
+    myRecipe.save()
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
